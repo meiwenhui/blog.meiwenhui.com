@@ -1,8 +1,8 @@
 
 # SEO settings
 title: "bó kè"
-title2: "bó kè" # default: ""
-description: "Hi World"
+title2: "" # default: ""
+description: " ->"
 keywords: "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
 url: http://heiswayi.github.io/thinkspace # site url
 baseurl: "" # apply repo name if use it under gh-pages branch
