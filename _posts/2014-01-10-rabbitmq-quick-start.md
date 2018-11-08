@@ -1,10 +1,12 @@
 ---
 layout: post
-title: "RabbitMQ 快速开始"
+title: "RabbitMQ 是个什么鬼？"
 comments: true
 description: "How to Download or Use This Theme"
 keywords: "RabbitMQ"
 ---
+
+
 
 ### Use this theme as you main site
 
