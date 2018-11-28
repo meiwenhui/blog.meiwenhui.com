@@ -10,25 +10,21 @@ keywords: "RabbitMQ"
 
 ### Use this theme as you main site
 
-- direct  Routing Key==Binding Key
-- fanout	把所有发送到该Exchange的消息路由到所有与它绑定的Queue中
-- topic   其实就是模糊匹配
-- headers Exchange不依赖于routing key与binding key的匹配规则来路由消息，而是根据发送的消息内容中的headers属性进行匹配。
+- direct  Routing Key==Binding Key  
+![直连](/assets/images/2018012917062142655.png)
+- fanout	把所有发送到该Exchange的消息路由到所有与它绑定的Queue中   
+![fanout](/assets/images/python-four.png)
+- topic   其实就是模糊匹配   
+![topic](/assets/images/python-five.png)
+- headers Exchange不依赖于routing key与binding key的匹配规则来路由消息，而是根据发送的消息内容中的headers属性进行匹配。   
+![topic](/assets/images/python-six.png)
+
 
 ### 相关方法，相关参数
-```
+
+```php
 /**
  * 声明一个队列, 如果不存在就创建它
- *
- * @param string $queue
- * @param bool $passive
- * @param bool $durable
- * @param bool $exclusive
- * @param bool $auto_delete
- * @param bool $nowait
- * @param array $arguments
- * @param int $ticket
- * @return mixed|null
  */
 public function queue_declare(
     $queue = '',
@@ -44,11 +40,6 @@ public function queue_declare(
 
 /**
  * Specifies QoS
- *
- * @param int $prefetch_size
- * @param int $prefetch_count
- * @param bool $a_global
- * @return mixed
  */
 public function basic_qos(
     $prefetch_size,
@@ -58,17 +49,6 @@ public function basic_qos(
 
 /**
  * 声明一个交换机
- *
- * @param string $exchange
- * @param string $type
- * @param bool $passive
- * @param bool $durable
- * @param bool $auto_delete
- * @param bool $internal
- * @param bool $nowait
- * @param array $arguments
- * @param int $ticket
- * @return mixed|null
  */
 public function exchange_declare(
     $exchange,
@@ -84,13 +64,6 @@ public function exchange_declare(
 
 /**
  * Publishes a message
- *
- * @param AMQPMessage $msg
- * @param string $exchange
- * @param string $routing_key
- * @param bool $mandatory
- * @param bool $immediate
- * @param int $ticket
  */
 public function basic_publish(
     $msg,
@@ -103,17 +76,6 @@ public function basic_publish(
 
 /**
  * Starts a queue consumer
- *
- * @param string $queue
- * @param string $consumer_tag
- * @param bool $no_local
- * @param bool $no_ack
- * @param bool $exclusive
- * @param bool $nowait
- * @param callable|null $callback
- * @param int|null $ticket
- * @param array $arguments
- * @return mixed|string
  */
 public function basic_consume(
     $queue = '',
@@ -133,7 +95,7 @@ public function basic_consume(
 ### direct
 
 生产者
-```
+```php
 $rabbitmq = new AMQPStreamConnection('127.0.0.1', 5672, 'test', 'test', '/test');
 $channel = $rabbitmq->channel();
 $channel->queue_declare(self::QUEUE_NAME, false, true, false, false);
