@@ -28,7 +28,7 @@ body {
 }
 
 body {
-  background-color: $base-background-color;
+  background-color: #fcfcfe;
 }
 
 hr {
@@ -72,6 +72,7 @@ hr {
   transition: 0.2s;
   margin-bottom: $small-spacing;
   min-height: 80px;
+  background: #fff;
   box-shadow: 0 0 3px 3px #e6e6e6;
 }
 
