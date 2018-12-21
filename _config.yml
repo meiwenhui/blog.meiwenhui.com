@@ -4,15 +4,9 @@ title: "bó kè"
 title2: "" # default: ""
 description: " ->"
 keywords: "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
-url: http://heiswayi.github.io/thinkspace # site url
+url: https://blog.meiwenhui.com # site url
 baseurl: "" # apply repo name if use it under gh-pages branch
 # baseurl: null # apply null if repo name is something like username.github.io
-
-google_analytics: UA-XXXXX-XX
-repo: http://github.com/heiswayi/thinkspace
-disqus_shortname: "hnbloggithub"
-twitter_username: "HeiswayiNrird"
-comments: true
 
 # Build settings
 permalink   : /:year/:title/
@@ -39,11 +33,6 @@ author:
   twitter  : http://twitter.com/HeiswayiNrird
   facebook : https://www.facebook.com/heiswayi.nrird
   linkedin : http://linkedin.com/in/nrird
-
-# social settings
-og_locale: "en_US"
-twitter_card: "summary_large_image"
-twitter_site: "@HeiswayiNrird"
 
 plugins_dir:
   - jekyll-paginate
