@@ -1,1 +1,58 @@
-<span>Are you lost？</span>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Welcome</title>
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+.wrapper{margin:20px}
+.tags{padding:20px 20px 30px 20px;}
+.taglist a{padding:3px;display:inline-block;white-space:nowrap;}
+a.size1{font-size:25px;padding:10px;color:#804D40;}
+a.size1:hover{color:#E13728;}
+a.size2{padding:7px;font-size:20px;color:#B9251A;}
+a.size2:hover{color:#E13728;}
+a.size3{padding:5px;font-size:30px;color:#C4876A;}
+a.size3:hover{color:#E13728;}
+a.size4{padding:5px;font-size:15px;color:#B46A47;}
+a.size4:hover{color:#E13728;}
+a.size5{padding:5px;font-size:25px;color:#E13728;}
+a.size5:hover{color:#B46A47;}
+a.size6{padding:0px;font-size:12px;color:#77625E}
+a.size6:hover{color:#E13728;}
+a.size7{padding:0px;font-size:13px;color:#77625E}
+a.size7:hover{color:#E13728;}
+a.siz8{padding:0px;font-size:14px;color:#77625E}
+a.size8:hover{color:#E13728;}
+a.size9{padding:0px;font-size:16px;color:#77625E}
+a.size9:hover{color:#E13728;}
+a.size10{padding:0px;font-size:17px;color:#77625E}
+a.size10:hover{color:#E13728;}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+$(document).ready(function(){
+	var tags_a = $(".tags").find("a");
+	tags_a.each(function(){
+		var x = 9;
+		var y = 0;
+		var rand = parseInt(Math.random() * 10);
+		$(this).addClass("size"+rand);
+	});
+
+});
+</script>
+
+
+
+<div class="wrapper">
+	<div class="tags">
+		<a target="_blank" href="http://www.php.net/manual/zh/">php</a>
+	</div>
+</div>
+</body>
+</html>
