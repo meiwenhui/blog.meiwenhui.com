@@ -1,3 +1,22 @@
+### 启用SSH
+在sd卡中新建一个名为ssh的文件即可
+
+### 设置WIFI
+https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
+
+编辑如下文件
+/etc/wpa_supplicant/wpa_supplicant.conf
+```
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=CN
+
+network={
+    ssid="WIFINAME"
+    psk="wifipassword"
+}
+```
+
 ### 设置树莓派3 B+的静态IP
 修改/etc/dhcpcd.conf 文件
 ```
