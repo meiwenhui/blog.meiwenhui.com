@@ -1,0 +1,33 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://v4.bootcss.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	{% assign page_title = '' %}
+	{% if page.title == "Home" %}
+	{% capture page_title %}
+	{{ site.title }} | {{ site.description }}
+	{%if paginator and paginator.page != 1 %} - {{ paginator.page }}{% endif %}
+	{% endcapture %}
+	{% else %}
+	{% capture page_title %}
+	{%if page.slug == 'category' %}Category: {% endif %}
+	{%if page.slug == 'tag' %}Tag: {% endif %} {{ page.title }} | {{ site.title }}{{ site.title2}}
+	{% endcapture %}
+	{% endif %}
+	{% capture page_title %}
+	{{ page_title | strip | rstrip | lstrip | escape | strip_newlines }}
+	{% endcapture %}
+	<title>{{ page_title }}</title>
+</head>
+<body style="background-color: #f8f9fa !important;">
+	<main class="wrapper">
+		{{ content }}
+		{% include footer.html %}
+	</main>
+</body>
+</html>

@@ -1,5 +1,38 @@
-<footer class="site-footer">
-  <div class="container">
-    <small class="block"><i class="fa fa-copyright"></i> {{ site.time | date: '%Y' }}</small>
-  </div>
+<footer class="container-fluid pt-4 my-md-5 pt-md-5 border-top" style="font-size: 80%">
+	<div class="row">
+		<div class="col-2 col-md">
+			<svg t="1569465143983" class="icon" style="width: 1.8em; height: .7em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 2048 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="696"><path d="M0 0h512v1024H0zM768 256h512v512H768zM1536 0h512v1024H1536z" fill="#F04155" p-id="697" data-spm-anchor-id="a313x.7781069.0.i0"></path></svg>
+			<a class="text-muted ml-1" target="_blank" href="http://www.php.net/manual/zh/">php</a>
+			<a class="text-muted ml-1" target="_blank" href="http://kafka.apache.org/">kafka</a>
+			<a class="text-muted ml-1" target="_blank" href="http://dubbo.apache.org/">dubbo</a>
+			<a class="text-muted ml-1" target="_blank" href="http://www.mybatis.org/mybatis-3/zh/index.html">mybatis</a>
+			<a class="text-muted ml-1" target="_blank" href="https://www.cnblogs.com/qingyunzong/p/8629775.html">zookeeper</a>
+			<a class="text-muted ml-1" target="_blank" href="http://www.ruanyifeng.com/blog/2018/07/cap.html/">cap</a>
+			<a class="text-muted ml-1" target="_blank" href="https://hub.docker.com/">docker</a>
+			<a class="text-muted ml-1" target="_blank" href="http://kafka.apache.org/">kafka stream</a>
+			<a class="text-muted ml-1" target="_blank" href="https://www.cnblogs.com/lzrabbit/p/3734850.html">LRU缓存实现</a>
+			<a class="text-muted ml-1" target="_blank" href="http://ifeve.com/java-blocking-queue/">BlockingQueue</a>
+
+		</div>
+
+		{% for category in site.categories %}
+		<div class="col-6 col-md">
+			<h5 hidden="">{{ category | first }}</h5>
+			<ul class="list-unstyled text-small">
+				{% for post in category.last %}
+				<li><a class="text-muted" date="{{ post.date | date:"%d/%m/%Y"}}" href="{{ post.url }}">{{ post.title }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+		{% endfor %}
+
+		<div class="col-6 col-md">
+			<h5 hidden=""></h5>
+			<ul class="list-unstyled text-small">
+				{% for page in site.pages %}
+				<li><a class="text-muted" href="{{page.permalink}}">{{page.title}}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
 </footer>
